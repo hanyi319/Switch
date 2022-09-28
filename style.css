@@ -1,0 +1,90 @@
+/* CSS Reset */
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* 使用 transition 过渡背景颜色 */
+body {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.4s ease;
+  background-color: #f2f2f2;
+}
+
+/* 夜间模式 */
+body.dark {
+  background-color: #141414;
+}
+
+/* 将 checkbox 类型的 input 封装成 switch 按钮 */
+.switch-box {
+  position: relative;
+}
+
+[type="checkbox"] {
+  width: 180px;
+  height: 90px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  margin: 0;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.switch {
+  width: 180px;
+  height: 90px;
+  border-radius: 45px;
+  background-color: #ffe09d;
+  display: flex;
+  padding: 6px;
+  align-items: center;
+  transition: background-color 0.3s ease;
+}
+
+/* switch 按钮的样式和动画 */
+.switch::before {
+  content: "";
+  width: 81px;
+  height: 81px;
+  border-radius: 80px;
+  background-color: #fff;
+  background-image: url("./img/sun.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 60px auto;
+  transition: all 0.3s ease;
+  position: relative;
+  margin-left: 0;
+  box-shadow: 2px 4px 10px -2px rgba(227, 193, 120, 0.9);
+}
+
+/* switch 按钮 checked 时，按钮空余位置的颜色的变化 */
+[type="checkbox"]:checked + .switch {
+  background-color: #1f1f1f;
+}
+
+/* switch 按钮 checked 时，icon 的变化 */
+[type="checkbox"]:checked + .switch::before {
+  margin-left: 88px;
+  background-color: #313131;
+  background-image: url("./img/moon.svg");
+  box-shadow: -2px 4px 10px -2px #000;
+}
+
+/* icon 长按时添加形变样式 circle-screw，并且此时未 checked */
+.switch.circle-screw::before {
+  width: 98px;
+}
+
+/* 未被 checked 时，长按 icon 的效果 */
+[type="checkbox"]:checked + .switch.circle-screw::before {
+  width: 98px;
+  margin-left: 72px;
+}
