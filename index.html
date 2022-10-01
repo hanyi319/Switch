@@ -4,13 +4,25 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>主题切换 Theme Switch</title>
-    <link rel="stylesheet" href="style.css" />
+    <title>Switch 开关</title>
+    <link
+      href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.1.1/css/all.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="style-default.css" />
+    <link rel="stylesheet" href="style-theme.css" />
   </head>
   <body class="light">
     <div class="switch-box">
-      <input type="checkbox" id="switch" />
-      <label class="switch" for="switch"></label>
+      <input type="checkbox" id="default" />
+      <label class="check-box" for="default">
+        <span class="check-handler"></span>
+      </label>
+    </div>
+    <div class="switch-box">
+      <input type="checkbox" id="theme" />
+      <label class="switch" for="theme"></label>
     </div>
     <script src="main.js"></script>
   </body>

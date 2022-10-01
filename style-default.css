@@ -1,0 +1,61 @@
+/* 开关整体 */
+.check-box {
+  display: flex;
+  align-items: center;
+  width: 180px;
+  height: 90px;
+  padding: 5px;
+  border-radius: 45px;
+  background-color: #d8d8d8;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+
+/* 开关的按钮部分 */
+.check-handler {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+  transition: all 0.5s ease;
+}
+
+/* 开关默认为关闭状态 */
+.check-handler::before {
+  font-family: "Font Awesome 6 Free";
+  content: "\f00d";
+  color: #d8d8d8;
+  font-size: 2.5rem;
+  font-weight: 900;
+}
+
+/* 开关如果被选中，改变空余位置背景颜色 */
+input[type="checkbox"]:checked + .check-box {
+  background: #5fb878;
+}
+
+/* 开关如果被选中，移动按钮 */
+input[type="checkbox"]:checked + .check-box .check-handler {
+  margin-left: 90px;
+}
+
+/* 开关如果被选中，调整按钮样式为打开状态 */
+input[type="checkbox"]:checked + .check-box .check-handler::before {
+  font-family: "Font Awesome 6 Free";
+  content: "\f00c";
+  color: #5fb878;
+}
+
+/* 按钮长按时，添加形变样式 circle-screw，并且此时未 checked */
+.check-handler.circle-screw::before {
+  width: 100px;
+}
+
+[type="checkbox"]:checked + .check-handler.circle-screw::before {
+  width: 100px;
+  margin-left: 72px;
+}

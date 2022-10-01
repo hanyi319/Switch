@@ -1,0 +1,42 @@
+/* CSS Reset */
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+  /* 使用 transition 过渡背景颜色 */
+  transition: background-color 0.4s ease;
+
+  /* 日间模式 */
+  background-color: #f2f2f2;
+
+  /* 消除点击或长按后的蓝色背景框 */
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+/* 夜间模式 */
+body.dark {
+  background-color: #141414;
+}
+
+/* 将 checkbox 类型的 input 元素封装为 switch 开关组件 */
+.switch-box {
+  position: relative;
+  padding: 16px;
+}
+
+input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+  width: 180px;
+  height: 90px;
+  cursor: pointer;
+}
